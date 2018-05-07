@@ -5,8 +5,8 @@ var Cart = require('../models/cart');
 router.get('/', function (req, res, next) {
    
     Cart.find()
-         .exec(function (err, ganesh) {
-             console.log(ganesh)
+         .exec(function (err, doc) {
+             console.log(doc)
             if (err) {
                 return res.status(500).json({
                     title: 'an error occured',
@@ -15,7 +15,7 @@ router.get('/', function (req, res, next) {
             }
               res.status(200).json({
                   product: 'success',
-                 obj: ganesh
+                 obj: doc
              });
          });
   });

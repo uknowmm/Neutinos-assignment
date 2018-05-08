@@ -1,8 +1,6 @@
 import { Component} from '@angular/core';
 import {Product} from "./prodect.model";
 import {ProductService} from "./product.service";
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler/src/core';
-
 
 @Component({
   selector: 'app-product',

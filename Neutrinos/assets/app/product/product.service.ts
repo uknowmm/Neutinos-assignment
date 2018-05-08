@@ -9,11 +9,11 @@ import {Product} from "./prodect.model";
 @Injectable()
 export class ProductService {
     constructor(private http: HttpClient) { }
-  private  product: Product[] = [
-       new Product('Apple iPhone 7', 48000, 'https://www.91-img.com/pictures/97744-v1-apple-iphone-7-mobile-phone-large-1.jpg'),
-       new Product('Apple iPhone 8', 50000, 'https://www.91-img.com/pictures/97744-v1-apple-iphone-7-mobile-phone-large-1.jpg'),
-       new Product('Apple iPhone x', 90000, 'https://www.91-img.com/pictures/97744-v1-apple-iphone-7-mobile-phone-large-1.jpg')
-  ];
+  // private  product: Product[] = [
+    //   new Product('Apple iPhone 7', 48000, 'https://www.91-img.com/pictures/97744-v1-apple-iphone-7-mobile-phone-large-1.jpg'),
+     //  new Product('Apple iPhone 8', 50000, 'https://www.91-img.com/pictures/97744-v1-apple-iphone-7-mobile-phone-large-1.jpg'),
+     //  new Product('Apple iPhone x', 90000, 'https://www.91-img.com/pictures/97744-v1-apple-iphone-7-mobile-phone-large-1.jpg')
+  //];
 
 getProduct(){
 
@@ -51,17 +51,9 @@ getCart(){
 }
 
 deleteFromCart(data:Product){
-    console.log(data["_id"])
-    let object:ID;
-    object = {};
-    object.id = JSON.stringify( data );
      return this.http.delete('http://localhost:3000/product/cart/'+data["_id"])
                 .toPromise()
                 .then(res => {   return res; });
 }
 
 }
-
-interface ID {
-    id?: string;
-  }

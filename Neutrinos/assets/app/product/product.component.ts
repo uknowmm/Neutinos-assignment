@@ -9,7 +9,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler/src/core';
   templateUrl: './product.component.html'
 })
 export class ProductComponent {
- flag=false;
+ count:number=0;
 constructor(private pservice:ProductService){}
 products: Product[];
 cartProduct: Product[];
@@ -37,6 +37,7 @@ ngOnInit(){
 
 onAdd(data:Product) {
 this.pservice.storeToCart(data);
-this.flag=true;
+this.count+=1;
+  
 }
 }
